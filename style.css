@@ -25,7 +25,8 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       135deg,
       rgba(0, 153, 219, 0.9) 0%,
       rgba(0, 104, 181, 0.9) 50%,
@@ -237,6 +238,13 @@ button .fas {
   transition: width 0.6s ease;
 }
 
+.progress-percentage {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #64748b;
+}
+
 /* Adjust spacing between components */
 .container {
   margin-top: 0;
@@ -331,6 +339,11 @@ select {
   gap: 5px;
 }
 
+.team-card.winning-team {
+  border: 2px solid #0071c5;
+  box-shadow: 0 0 0 3px rgba(0, 113, 197, 0.15);
+}
+
 /* Team card colors */
 .team-card.water {
   background-color: #e8f7fc;
@@ -346,6 +359,32 @@ select {
   font-size: 15px;
   font-weight: 500;
   color: #475569;
+}
+
+.attendee-list-section {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid #f1f5f9;
+}
+
+.attendee-list-section h3 {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 14px;
+}
+
+.attendee-list {
+  list-style: none;
+  text-align: left;
+}
+
+.attendee-list-item {
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background-color: #f8fafc;
+  color: #475569;
+  font-size: 15px;
 }
 
 /* Mobile responsive */
