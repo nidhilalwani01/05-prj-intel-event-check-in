@@ -157,6 +157,17 @@ function loadState() {
   }
 }
 
+function resetStateForNewSession() {
+  count = 0;
+  attendees = [];
+  hasCelebrationBeenShown = false;
+  setTeamCounts({});
+  updateAttendanceAndProgress();
+  renderAttendeeList();
+  greeting.textContent = "";
+  greeting.style.display = "none";
+}
+
 function getWinningTeam() {
   const teamStandings = [
     {
@@ -303,9 +314,8 @@ function handleCheckIn(event) {
 }
 
 function initializeApp() {
-  loadState();
-  updateAttendanceAndProgress();
-  renderAttendeeList();
+  localStorage.removeItem(storageKey);
+  resetStateForNewSession();
   checkInButton.addEventListener("click", handleCheckIn);
 }
 
