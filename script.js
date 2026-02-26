@@ -146,14 +146,16 @@ function loadState() {
   const rawState = localStorage.getItem(storageKey);
 
   if (!rawState) {
-    return;
+    return false;
   }
 
   try {
     const savedState = JSON.parse(rawState);
     applyLoadedState(savedState);
+    return true;
   } catch (error) {
     localStorage.removeItem(storageKey);
+    return false;
   }
 }
 
@@ -314,8 +316,12 @@ function handleCheckIn(event) {
 }
 
 function initializeApp() {
-  localStorage.removeItem(storageKey);
-  resetStateForNewSession();
+  const hasLoadedState = loadState();
+
+  if (!hasLoadedState) {
+    resetStateForNewSession();
+  }
+
   checkInButton.addEventListener("click", handleCheckIn);
 }
 
